@@ -11,6 +11,8 @@
 // Use your function to create a header
 // and append it to the DOM inside the div.header-container
 
+// const entryPoint = document.querySelector('.header-container')
+
 function Header() {
       // create elements
   const headerCard = document.createElement("div");
@@ -19,6 +21,7 @@ function Header() {
   const span2Text = document.createElement("span");
   // structure elements
 //   headerCard.prepend(header-container)
+//   headerCard.appendChild('.header-container')
   headerCard.appendChild(spanText);
   headerCard.appendChild(h1Text);
   headerCard.appendChild(span2Text);
@@ -33,6 +36,6 @@ function Header() {
 
   return headerCard;
 }
-
+// entryPoint.appendChild(headerCard)
 document.body.prepend(Header());
 // console.log(Header());
