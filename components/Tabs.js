@@ -39,7 +39,7 @@ axios
         const topicCard = topicMaker({topics})
         entryPoint.append(topicCard)
     })
-    console.log(topic)
+    // console.log(topic)
   })
   .catch((drama) => {
     console.log(drama);

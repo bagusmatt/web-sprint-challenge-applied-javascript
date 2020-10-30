@@ -21,24 +21,13 @@
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-axios
-  .get("https://lambda-times-api.herokuapp.com/articles")
-  .then((res) => {
-    //   const divs foreach ehre
-    console.log(res.data.articles);
-    // console.log(divs)
-  })
-  .catch((drama) => {
-    console.log(drama);
-  });
-
 function divMaker(obj) {
   //   elements
   const divCard = document.createElement("div");
   const divHeadline = document.createElement("div");
   const divAuthor = document.createElement("div");
   const divImage = document.createElement("div");
-  const image = document.createElement("div");
+  const image = document.createElement("img");
   const spanAuthor = document.createElement("span");
   // append
   divCard.appendChild(divHeadline);
@@ -54,7 +43,18 @@ function divMaker(obj) {
   // content
   divHeadline.textContent = obj.headline;
   divImage.src = obj.authorPhoto;
-  spanAuthor.textContent = `By {obj.authorName}`;
+  spanAuthor.textContent = `By ${obj.authorName}`;
 
   return divCard;
 }
+
+axios
+  .get("https://lambda-times-api.herokuapp.com/articles")
+  .then((res) => {
+    //   const divs foreach here
+    
+    console.log(res.data.articles);
+  })
+  .catch((drama) => {
+    console.log(drama);
+  });
